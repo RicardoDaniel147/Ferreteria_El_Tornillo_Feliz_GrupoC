@@ -1,4 +1,5 @@
 # Ferreteria_El_Tornillo_Feliz_GrupoC
+# La solución del grupo C se encuentra en la carpeta `MarkDown`
 Integrantes:
 - Ricardo Villarreal
 - Daniel Jaramillo
@@ -14,26 +15,26 @@ El departamento administrativo quiere integrar toda la información en una base 
 
 Situación actual:
 Los reportes de inventario que llegan desde las sucursales presentan múltiples problemas:
-•	Las categorías no son uniformes (“Herramientas”, “herramientas”, “Htas”).
-•	Algunos precios tienen formato de texto o incluyen el símbolo $.
-•	Las unidades de medida están mezcladas (por ejemplo, “1 Lt” y “1L”).
+-	Las categorías no son uniformes (“Herramientas”, “herramientas”, “Htas”).
+-	Algunos precios tienen formato de texto o incluyen el símbolo $.
+-	Las unidades de medida están mezcladas (por ejemplo, “1 Lt” y “1L”).
 Solicitud del cliente:
 El gerente de sistemas de El Tornillo Feliz solicita el desarrollo de un proceso ETL que permita limpiar, unificar y cargar la información de los productos en una base de datos central PostgreSQL.
 La transformación deberá tomar los datos originales, estandarizarlos y almacenarlos en una nueva tabla limpia y normalizada.
 
-
-Resultado esperado:
+**Resultado esperado:**
 Una tabla única con el catálogo de productos normalizado:
 
 Crear la tabla staging.productos_ferreteria_raw y cargar los datos.
 Diseñar una transformación ETL que:
-•	Uniformice el nombre de las categorías.
-•	Elimine símbolos innecesarios ($).
-•	Estandarice la unidad de medida.
+- Uniformice el nombre de las categorías.
+- 	Elimine símbolos innecesarios ($).
+-	Estandarice la unidad de medida.
 Cargue los datos limpios en una nueva tabla staging.productos_ferreteria_clean.
 
-Datos
 
+**Datos**
+```sql
 CREATE SCHEMA IF NOT EXISTS staging;
 
 CREATE TABLE staging.productos_ferreteria_raw (
@@ -148,4 +149,4 @@ VALUES
 ('F098','Tornillo cabeza plana','Ferre','CAJA','$4.60','FixAll'),
 ('F099','Broca para madera 10mm','herramientas','1 und','$2.40','DrillPro'),
 ('F100','Martillo carpintero','Htas','1 und','$9.00','AceroMax');
-
+```
